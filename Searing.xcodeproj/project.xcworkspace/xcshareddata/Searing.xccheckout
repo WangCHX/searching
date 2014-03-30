@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>91340547-0970-4FBC-B0CF-6500DF2790CE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Searing</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</key>
+		<string>https://github.com/WangCHX/invertedIndex.git</string>
+		<key>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</key>
+		<string>https://github.com/WangCHX/searching.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Searing.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</key>
+		<string>../../../INDEX</string>
+		<key>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/WangCHX/searching.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>INDEX</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Searing</string>
+		</dict>
+	</array>
+</dict>
+</plist>
