@@ -7,6 +7,9 @@
 //
 
 #include "MainSearch.h"
+#include <sys/time.h>
+#include <unistd.h>
+
 MainSearch::MainSearch(){
     init();
 }
@@ -115,34 +118,109 @@ void MainSearch::init() {
 
 
 void MainSearch::doSearch() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    struct timeval start, end;
+    
+    gettimeofday(&start, NULL);
+    
+	cout<<"do searching...."<<endl<<" key words:"<<words<<endl;
+	//for(int i =0; i< key_words.size();i++)
+	//	cout<<key_words[i]<<" ";
+	result_count = 0;
+	int request_count = 0;
+	string word="";
+	int pos=0;
+	vector<string> request_list;
+	while(get_one_word(words,pos,word))
+	{
+		cout<<"new:"<<word<<endl;
+		request_list.push_back(word);
+		request_count++;
+		word="";
+        
+	}
+	if(request_count == 0)
+		return;
+    
+	vector<Lp*> p;
+    //	_result.print();
+	for(int i = 0 ; i < request_list.size();i++)
+	{
+		int word_id=_word_map[request_list[i]];
+		cout<<"word: "<<request_list[i]<<" word_id:"<<word_id<<endl;
+		if(word_id == 0)
+			continue;
+		Lp* tmp = openList(word_id);
+		if(tmp == NULL)
+			continue;
+		p.push_back(tmp);
+	}
+	if(p.size() == 0)
+		return;
+	cout<<"p.size:"<<p.size()<<endl;
+	cout<<"doc_map_size"<<_doc_map._data.size()<<endl;
+	int did = 0;
+	while(did < N)
+	{
+		int d = 0;
+	 	did = nextGEQ(p[0],did);
+	 	if( did == 0)
+ 		{
+ 			cout<<"did = 0"<<endl;
+ 			continue;
+ 		}
+	 	for(int i = 1; (i< p.size())&& ((d=nextGEQ(p[i],did))==did);i++);
+	 	if(did> N)
+	 		break;
+		if(d > did) did = d-1;
+		else
+		{
+			float bm25_all = 0.0;
+			STRU_DOC one_doc = _doc_map[did];
+			//cout<<"doc_id:"<<did<<"url:"<<one_doc.doc_name<<" file: "<<one_doc.file_id<<" offset:"<<one_doc.offset<<" len:"<<one_doc.len<<endl;
+			int target_pos = getPos(p[0]);
+			for( int k = 0 ; k<p.size(); k++)
+			{
+			 	int freq= getFreq(p[k]);
+                
+			 	int ft=p[k]->doc_num;
+                
+			 	if(one_doc.doc_name == "")
+			 		continue;
+			 	//cout<<"doc_id:"<<did<<"url:"<<one_doc.doc_name<<" file: "<<one_doc.file_id<<" offset:"<<one_doc.offset<<" len:"<<one_doc.len<<endl;
+			 	//cout<<"req:"<<freq<<" ft:"<<ft<<endl;
+			 	//comput bm25
+			 	float K = (float)k1 * (float)((1-b) + b* ((float)one_doc.len / (float)d_agv ) );
+			 	float bm25 = log ( (float)(N-ft+0.5)/(float)(ft+0.5) ) * ((k1 + 1)*(float)freq)/(float)(K + freq);
+			 	//cout<<"bm25:"<<bm25<<endl;
+			 	bm25_all+=bm25;
+	 		}
+		 	if(result_count < 10)
+		 	{
+                
+				result_array[result_count]._url =one_doc.doc_name;
+				result_array[result_count]._bm25=bm25_all;
+				result_array[result_count]._doc_id = did;
+				result_array[result_count]._pos = target_pos;
+                
+		 		result_count++;
+		 	}
+		 	else if(bm25_all > result_array[0]._bm25)
+		 	{
+				result_array[0]._url =one_doc.doc_name;
+				result_array[0]._bm25=bm25_all;
+				result_array[0]._doc_id = did;
+				result_array[0]._pos = target_pos;
+                
+		 	}
+            
+	 		sort(result_array,0,result_count-1);
+	 	}
+	 	//cout<<"list:";
+	 	//for(int j =0; j < result_count; j++)
+	 	//	cout<<"["<<j<<"] "<<result_array[j]._bm25<<endl;
+        
+		did++;
+	}
+    gettimeofday(&end, NULL);
+	_searching_time  = (end.tv_sec  - start.tv_sec)*1000+ (end.tv_usec - start.tv_usec)/1000.0;
 }

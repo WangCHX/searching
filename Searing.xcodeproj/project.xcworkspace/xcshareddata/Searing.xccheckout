@@ -5,48 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>91340547-0970-4FBC-B0CF-6500DF2790CE</string>
+	<string>532B7B13-F41D-4E12-A354-0D3B13834434</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Searing</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</key>
-		<string>https://github.com/WangCHX/invertedIndex.git</string>
-		<key>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</key>
-		<string>https://github.com/WangCHX/searching.git</string>
+		<key>C5CA0400-34CB-4623-9F93-3E63E4E43BDC</key>
+		<string>https://github.com/shuashuahealth/searching.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Searing.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</key>
-		<string>../../../INDEX</string>
-		<key>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</key>
+		<key>C5CA0400-34CB-4623-9F93-3E63E4E43BDC</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/WangCHX/searching.git</string>
+	<string>https://github.com/shuashuahealth/searching.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</string>
+	<string>C5CA0400-34CB-4623-9F93-3E63E4E43BDC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>31146B2D-E199-4AA4-BE40-F236C7CAF7A8</string>
+			<string>C5CA0400-34CB-4623-9F93-3E63E4E43BDC</string>
 			<key>IDESourceControlWCCName</key>
-			<string>INDEX</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C43B8597-E69A-4C1D-AC1D-0233F6AE3004</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Searing</string>
+			<string>searching</string>
 		</dict>
 	</array>
 </dict>
