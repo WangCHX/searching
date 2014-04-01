@@ -14,14 +14,22 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include "vbyte.h"
 using namespace std;
+struct STRU_DOC
+{
+	string doc_name;
+	//int file_id;
+	//int offset;
+	int len;
+    STRU_DOC(){};
+    STRU_DOC(string temp, int llen):doc_name(temp), len(llen){}
+};
 typedef struct {int docNum; int chunkNum; int postingNum;} wordInfo;
 typedef struct {int chunk_last_wordid; int chunk_last_docid; int filenum; int offset;} chunk;
-unordered_map<int, string> docMap;
-unordered_map<string, int> lexMap;
-unordered_map<int, wordInfo> wordIndex;
-unordered_map<int, chunk> chunkIndex;
+static unordered_map<int, STRU_DOC> docMap;
+static unordered_map<string, int> lexMap;
+static unordered_map<int, wordInfo> wordIndex;
+static unordered_map<int, chunk> chunkIndex;
 const int MAXDID = 1000000000;
 class LP {
 public:
@@ -35,9 +43,5 @@ public:
 	int	   cur_posting_freq;
 	int    cur_first_pos;
 	vector <chunk> chunkvector;
-    LP* openList(int wordid);
-    void closeList(LP *t);
-    int nextGEQ(LP *t, int num);
-    int getFreq(LP *t);
 };
 #endif /* defined(__Searing__LP__) */

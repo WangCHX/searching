@@ -15,10 +15,13 @@
 //int    cur_posting_docid;
 //int	   cur_posting_freq;
 //int    cur_first_pos;
+#ifndef x
+#define x
 #include "LP.h"
-LP* LP::openList(int wordid) {
+#include "vbyte.h"
+inline LP* openList(int wordid) {
     LP *res = new LP;
-    res->word_id = word_id;
+    res->word_id = wordid;
     res->doc_num = wordIndex[wordid].docNum;
     res->start_chunk = wordIndex[wordid].chunkNum;
     res->start_posting_num = wordIndex[wordid].postingNum;
@@ -37,7 +40,7 @@ LP* LP::openList(int wordid) {
     return res;
 }
 
-int LP::nextGEQ(LP *t, int search_docid) {
+inline int nextGEQ(LP *t, int search_docid) {
     int docid = 0;
 	int start_chunk_num;
 	int start_posting_num = 1;
@@ -184,6 +187,7 @@ int LP::nextGEQ(LP *t, int search_docid) {
     return MAXDID;
 }
 
-int LP::getFreq(LP *t){
+inline int getFreq(LP *t){
     return t->cur_posting_freq;
 }
+#endif

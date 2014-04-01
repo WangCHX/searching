@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		18D3D55C18DF59D600EEF9B1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D55B18DF59D600EEF9B1 /* main.cpp */; };
 		18D3D55E18DF59D600EEF9B1 /* Searing.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18D3D55D18DF59D600EEF9B1 /* Searing.1 */; };
-		18D3D56618DF5B6B00EEF9B1 /* LP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D56418DF5B6B00EEF9B1 /* LP.cpp */; };
-		18D3D56918DF736500EEF9B1 /* MainSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D56718DF736500EEF9B1 /* MainSearch.cpp */; };
+		18D3D56618DF5B6B00EEF9B1 /* operation.h in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D56418DF5B6B00EEF9B1 /* operation.h */; };
+		18D3D56918DF736500EEF9B1 /* Search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D56718DF736500EEF9B1 /* Search.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +30,10 @@
 		18D3D55818DF59D600EEF9B1 /* Searing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Searing; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D3D55B18DF59D600EEF9B1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D3D55D18DF59D600EEF9B1 /* Searing.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Searing.1; sourceTree = "<group>"; };
-		18D3D56418DF5B6B00EEF9B1 /* LP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LP.cpp; sourceTree = "<group>"; };
+		18D3D56418DF5B6B00EEF9B1 /* operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = operation.h; sourceTree = "<group>"; };
 		18D3D56518DF5B6B00EEF9B1 /* LP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LP.h; sourceTree = "<group>"; };
-		18D3D56718DF736500EEF9B1 /* MainSearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainSearch.cpp; sourceTree = "<group>"; };
-		18D3D56818DF736500EEF9B1 /* MainSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSearch.h; sourceTree = "<group>"; };
+		18D3D56718DF736500EEF9B1 /* Search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Search.cpp; sourceTree = "<group>"; };
+		18D3D56818DF736500EEF9B1 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
 		18D3D56A18E0B36C00EEF9B1 /* vbyte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vbyte.h; path = ../../INDEX/INDEX/vbyte.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,10 +70,10 @@
 				18D3D56A18E0B36C00EEF9B1 /* vbyte.h */,
 				18D3D55B18DF59D600EEF9B1 /* main.cpp */,
 				18D3D55D18DF59D600EEF9B1 /* Searing.1 */,
-				18D3D56418DF5B6B00EEF9B1 /* LP.cpp */,
+				18D3D56418DF5B6B00EEF9B1 /* operation.h */,
 				18D3D56518DF5B6B00EEF9B1 /* LP.h */,
-				18D3D56718DF736500EEF9B1 /* MainSearch.cpp */,
-				18D3D56818DF736500EEF9B1 /* MainSearch.h */,
+				18D3D56718DF736500EEF9B1 /* Search.cpp */,
+				18D3D56818DF736500EEF9B1 /* Search.h */,
 			);
 			path = Searing;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D3D56918DF736500EEF9B1 /* MainSearch.cpp in Sources */,
-				18D3D56618DF5B6B00EEF9B1 /* LP.cpp in Sources */,
+				18D3D56918DF736500EEF9B1 /* Search.cpp in Sources */,
+				18D3D56618DF5B6B00EEF9B1 /* operation.h in Sources */,
 				18D3D55C18DF59D600EEF9B1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +241,7 @@
 				18D3D56318DF59D600EEF9B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,8 +10,13 @@
 #define __Searing__MainSearch__
 
 #include "LP.h"
+#include "operation.h"
 #include <queue>
-
+#include <sys/time.h>
+#include <unistd.h>
+#include <sstream>
+#include <string>
+using namespace std;
 struct STRU_RESULT
 {
 	std::string _url;
@@ -34,19 +39,25 @@ struct STRU_RESULT
         return this->_bm25 > node._bm25;
     }
 };
-const string LEXIINFO_LOCATION = "/Users/apple/Developer/INDEX/lexInfo.txt";
+const string LEXIINFO_LOCATION = "/Users/apple/Developer/INDEX/lexInfo";
 const string DOCINFO_LOCATION = "/Users/apple/Developer/INDEX/docInfo.txt";
 const string RESULT_LOCATION = "/Users/apple/Developer/INDEX/result/";
-class MainSearch{
+class Search{
 public:
-    MainSearch();
-    ~MainSearch(){};
+    Search();
+    ~Search(){};
     void init();
-    void doSearch();
+    void doSearch(char* word);
+    int _searching_time;
+    void printResult();
     
 private:
     double k1;
     double b;
+    int result_count;
+    unsigned long long total_size;
+    int d_agv;
+    int N;
     priority_queue<STRU_RESULT> result_array;
 };
 
