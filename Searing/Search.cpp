@@ -134,7 +134,7 @@ void Search::doSearch(char* words) {
 	int request_count = 0;
 	string word="";
 	int pos=0;
-    int N = docMap.size();
+    int N = (int)docMap.size();
 	vector<string> request_list;
 //	while(get_one_word(words,pos,word))
 //	{
@@ -176,11 +176,11 @@ void Search::doSearch(char* words) {
 	{
 		int d = 0;
 	 	did = nextGEQ(p[0],did);
-	 	if( did == 0)
- 		{
- 			cout<<"did = 0"<<endl;
- 			continue;
- 		}
+//	 	if( did == 0)
+// 		{
+// 			cout<<"did = 0"<<endl;
+// 			continue;
+// 		}
 	 	for(int i = 1; (i< p.size())&& ((d=nextGEQ(p[i],did))==did);i++);
 	 	if(did> N)
 	 		break;
@@ -244,9 +244,11 @@ void Search::doSearch(char* words) {
 void Search::printResult() {
     cout << "time consumed: " << this->_searching_time << endl;
     cout << "top 10 results: " << endl;
+    int i = 1;
     while (!result_array.empty()) {
         STRU_RESULT temp = result_array.top();
         result_array.pop();
+        cout << i++ << endl;
         cout << "url: " << temp._url;
         cout << " bm25: " << temp._bm25 << endl;
     }

@@ -30,7 +30,7 @@ static unordered_map<int, STRU_DOC> docMap;
 static unordered_map<string, int> lexMap;
 static unordered_map<int, wordInfo> wordIndex;
 static unordered_map<int, chunk> chunkIndex;
-const int MAXDID = 1000000000;
+const int MAXDID = 52140;
 class LP {
 public:
     int    word_id;

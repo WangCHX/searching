@@ -59,7 +59,7 @@ inline int nextGEQ(LP *t, int search_docid) {
 	unsigned int res3;
 	unsigned int* res_arr;
 	int last_docid = 0;
-	string file="result/";
+	string file="/Users/apple/Developer/INDEX/result/";
 	char filename[50]={0};
 	char* chunk;
 	unsigned char* uchunk;
@@ -103,7 +103,7 @@ inline int nextGEQ(LP *t, int search_docid) {
         ifstream myFile1 (file.c_str(), ios::in | ios::binary);
         myFile1.seekg(chunkIndex[start_chunk_num].offset, ios::beg);
         myFile1.read(chunk,1200000 - chunkIndex[start_chunk_num].offset);
-        file = "result/";
+        file = "/Users/apple/Developer/INDEX/result/";
         int chunk_offset = 1200000 - chunkIndex[start_chunk_num].offset;
         
         for(int k=0; k<num_of_files; k++){
@@ -112,7 +112,7 @@ inline int nextGEQ(LP *t, int search_docid) {
             ifstream myFile2 (file.c_str(), ios::in | ios::binary);
             myFile2.read(chunk+chunk_offset,1200000);
             chunk_offset = chunk_offset + 1200000;
-            file = "result/";
+            file = "/Users/apple/Developer/INDEX/result/";
         }
         
         sprintf (filename, "data%d", chunkIndex[start_chunk_num+1].filenum);
@@ -120,7 +120,7 @@ inline int nextGEQ(LP *t, int search_docid) {
         ifstream myFile3 (file.c_str(), ios::in | ios::binary);
         myFile3.read(chunk+chunk_offset,chunkIndex[start_chunk_num+1].offset);
         chunk_offset = chunk_offset + chunkIndex[start_chunk_num+1].offset;
-        file = "result/";
+        file = "/Users/apple/Developer/INDEX/result/";
         memcpy(uchunk, chunk, chunk_size);
     }
     
@@ -184,10 +184,12 @@ inline int nextGEQ(LP *t, int search_docid) {
     //	cout<<"start_chunk_num: "<<start_chunk_num<<" filenum: "<<filenum<<" offset: "<<offset<<" chunk_size: "<<chunk_size<<endl;
     //	return docid;
 
-    return MAXDID;
+    //return MAXDID;
+    return 100000000;
 }
 
 inline int getFreq(LP *t){
     return t->cur_posting_freq;
 }
+
 #endif

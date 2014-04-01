@@ -8,14 +8,17 @@
 
 #include <iostream>
 #include "Search.h"
+#include <cstdio>
 using namespace std;
 int main(int argc, const char * argv[])
 {
     Search demo;
-    cout << "query : ";
     char word[100];
-    cin >> word;
-    demo.doSearch(word);
-    demo.printResult();
+    while (1){
+        cout << "query : ";
+        cin.getline(word, 100);
+        demo.doSearch(word);
+        demo.printResult();
+    }
     return 0;
 }

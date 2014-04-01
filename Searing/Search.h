@@ -36,7 +36,7 @@ struct STRU_RESULT
 		_pos=0;
 	}
     bool operator < (const STRU_RESULT &node) const{
-        return this->_bm25 > node._bm25;
+        return this->_bm25 < node._bm25;
     }
 };
 const string LEXIINFO_LOCATION = "/Users/apple/Developer/INDEX/lexInfo";
