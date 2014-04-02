@@ -67,7 +67,7 @@ inline int nextGEQ(LP *t, int search_docid) {
 	start_chunk_num = t->start_chunk;
     
 	for (i=0; i< t->num_of_chunks-1;i++){
-		if(t->chunkvector.at(i).chunk_last_docid>=search_docid){
+		if(t->chunkvector[i].chunk_last_docid>=search_docid){
 			start_chunk_num = t->start_chunk + i;
 			break;
 		}
@@ -105,7 +105,6 @@ inline int nextGEQ(LP *t, int search_docid) {
         myFile1.read(chunk,1200000 - chunkIndex[start_chunk_num].offset);
         file = "/Users/apple/Developer/INDEX/result/";
         int chunk_offset = 1200000 - chunkIndex[start_chunk_num].offset;
-        
         for(int k=0; k<num_of_files; k++){
             sprintf (filename, "data%d", chunkIndex[start_chunk_num].filenum+1+k);
             file = file + filename;

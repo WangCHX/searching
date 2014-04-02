@@ -244,12 +244,13 @@ void Search::doSearch(char* words) {
 void Search::printResult() {
     cout << "time consumed: " << this->_searching_time << endl;
     cout << "top 10 results: " << endl;
-    int i = 1;
+    vector<STRU_RESULT> res;
     while (!result_array.empty()) {
         STRU_RESULT temp = result_array.top();
+        res.insert(res.begin(), temp);
         result_array.pop();
-        cout << i++ << endl;
-        cout << "url: " << temp._url;
-        cout << " bm25: " << temp._bm25 << endl;
+    }
+    for (int i= 0; i < res.size(); i ++) {
+        cout << i + 1 << " url: " << res[i]._url << " bm25: " << res[i]._bm25 << endl;
     }
 }
